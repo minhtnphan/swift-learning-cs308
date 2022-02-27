@@ -1,2 +1,5 @@
 # swift-learning-cs308
-This is the repository for my project in Programming Languages course, Spring 2022 at Fulbright University Vietnam
+Get to know Swift a compiled programming language developed by Apple for Apple devices and Linux in this note.
+<h1> Origin of Swift</h1>
+<br>
+Swift was first introduced in Worldwide Developers Conference in 2014 of Apple.
