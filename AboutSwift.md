@@ -56,8 +56,8 @@ Run the program by clicking the run button on the top left of the Xcode window.
 There are 2 ways to comment on Swift code, specifically:
 <br>
 <ul>
-    <li>For single line comment: use ```//```</li>
-    <li> For multiline comment: use ```/*...*/```</li>
+    <li>For single line comment: use //</li>
+    <li> For multiline comment: use /*...*/</li>
  </ul>
  <h2>References</h2>
  educative, History of Swift. Retrieved at https://www.educative.io/courses/swift-programming-mobile-app/q282KZA1N33<br>
