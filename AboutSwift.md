@@ -1,5 +1,5 @@
 # About Swift
-Get to know Swift a compiled programming language developed by Apple for Apple devices and Linux in this note.
+Get to know Swift - a programming language developed by Apple for Apple devices and Linux in this note.
 <h1> Origin of Swift</h1>
 Swift was first introduced in Worldwide Developers Conference in 2014 of Apple. Prior to Swift, Apple mainly used Objective-C to develop their products. However, the Apple developers (including Bertrand Serlet) realized that Apple's applications needed to be developed by a safer language than C-based languages in terms of memory management and syntax. Swift was created as an alternative to Objective-C with simpler syntax and conventions for the purpose of easy, faster code that avoids common reasons for crashes during runtime.
 <br>
