@@ -70,6 +70,20 @@ There are 2 ways to comment on Swift code, specifically:
  </ul>
  
  <h1>Names, Types and Binding</h1>
+ 
+ <h2>Primitive data types</h2>
+Swift's built-in data types include Int, UInt, Float, Double, Bool, String, Character, Tuple and Optional.
+    - UInt is used to represent unsigned integers while Int represents sign integers
+    - Optional stores variables that can either hold a value or not
+Examples will be provide in the next section.
+ 
+ <h2>Naming conventions for variables</h2>
+ Variables in Swift should be named by the following convention: 
+ - Variable name should be written with camelCase format, in which the variables should start with a lower case letter, followed up by any Unicode characters.
+ - The variables cannot start with a number and cannot contain whitespace character, mathematical symbols, arrows, http://www.unicode.org/faq/private_use.html private-use Unicode scalar values, or linie- and box-drawing characters.
+ 
+Once declaring a variable and constant, you cannot initialize it with the same name or change the variable's value to a different data type.
+ 
  <h2>Keywords and reserved words</h2>
  Swift has a list of keywords that cannot be used as identifiers. According to Swift guide, keywords other than inout, var, and let can be used as parameter names in a function declaration or function call without being escaped with backticks. Unless there is ambiguituity between refering to the member and the keyword, the member must be escaped with backticks.
  
@@ -81,13 +95,6 @@ There are 2 ways to comment on Swift code, specifically:
 
 Swift also has a list of reserved words, including: associativity, convenience, didSet, dynamic, final, get, indirect, infix, lazy, left, mutating, none, nonmutating, optional, override, postfix, precedence, prefix, Protocol, required, right, set, some, Type, unowned, weak, and willSet. Outside the context in which they appear in the grammar, they can be used as identifiers.
 
-<h2>Primitive data types</h2>
-Swift's built-in data types include Int, UInt, Float, Double, Bool, String, Character, Tuple and Optional.
-    - UInt is used to represent unsigned integers while Int represents sign integers
-    - Optional stores variables that can either hold a value or not
-    /example/
- 
- <h2>Naming conventions</h2>
 
 
  
