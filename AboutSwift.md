@@ -5,6 +5,7 @@ Get to know Swift - a programming language developed by Apple for Apple devices 
 - [Origin of Swift](#origin-of-swift)
 - [Getting Started](#getting-started)
 - [Names, Types and Binding](#names-types-and-binding)
+- [Selection Control Structures](#selection-control-structures)
 - [References](#references)
 
 <h1>Origin of Swift</h1>
@@ -13,31 +14,33 @@ Swift was first introduced in Worldwide Developers Conference in 2014 of Apple. 
 <br>
 Nowadays, Swift is widely used as a general-purpose, open-source programming language for Apple ecosystems (macOS, iOS, watchOS, tvOS...) and Linux. Swift are mainly used to develop applications across Apple devices, especially iOS apps on iPhones. 
 <h1>Getting Started</h1>
-<h2>Installation on Macbook</h2>
-The first and foremost step to use Swift is to have a Mac device. After that, download and install Swift compiler and IDE - Xcode, as well as the toolchain at https://www.swift.org/download/
-<br>
+    <h2>Installation on Macbook</h2>
+    The first and foremost step to use Swift is to have a Mac device. After that, download and install Swift compiler and IDE - Xcode, as well as the       toolchain.
+    <br>
+    <h2>Hello, World!</h2>
+    Before being able to execute a Hello, World program, we have to choose a template to initialize a project. For runable program on a Macbook, choose     macOS multiplaform first. After that, it's your choice to execute the program on command line tool, or as an app, a game or a framework! Below are      examples of running Swift code using Command Line Tool and App for MacOS.
+        <h3>Command Line Tool</h3>
+        Continue on choosing a template, choose Command Line Tool and initialize the project as required. After creating the project, the command line            tool should appear at the half bottom of the working space.
+        <br>
+        <p align="center">
+        <img width="720" alt="image" src="https://user-images.githubusercontent.com/42914855/155888863-e6a273f5-6047-435d-b645-64f7aca19ce6.png">
+        </p>
+        Copy the Hello World code in its main file:
+        <br>
+        
+        ```
+        import Foundation
 
-<h2>Hello, World!</h2>
-Before being able to execute a Hello, World program, we have to choose a template to initialize a project. For runable program on a Macbook, choose macOS multiplaform first. After that, it's your choice to execute the program on command line tool, or as an app, a game or a framework! Below are examples of running Swift code using Command Line Tool and App for MacOS.
-<h3>Command Line Tool</h3>
-Continue on choosing a template, choose Command Line Tool and initialize the project as required. After creating the project, the command line tool should appear at the half bottom of the working space.
-<br><br>
-<p align="center">
-<img width="720" alt="image" src="https://user-images.githubusercontent.com/42914855/155888863-e6a273f5-6047-435d-b645-64f7aca19ce6.png">
-</p>
-
-Copy the Hello World code in its main file:
-```
-import Foundation
-
-print("Hello, World!") 
-```
+        print("Hello, World!") 
+        ```
+        
 The code can be executed by clicking the run button on the top left of Xcode window. 
 Hello World can also be executed using terminal. On terminal, access your project and find ```main.swift```, then execute the following code:
-<br>
-```
-swift main.swift
-```
+        <br>
+        ```
+        swift main.swift
+        ```
+        
 <h3>App</h3>
 Running a Hello, World using an app template follows similar steps like using Command Line Tool, but instead of choosing Command Line Tool when initializing the project, choose App instead.
 Put the below code in ContentView file of the project:
@@ -99,6 +102,7 @@ Swift is neither implicitly-typed nor explicitly-typed language. It depends on t
 <ul>
 <li>The syntax for declaring a variable in Swift is <code> var variableName: Datatype = expression;</code> or  <code> var variableName = expression;</code></li>
 <li>The syntax for declaring a constant in Swift is <code>let constantName: Datatype = expression; </code></li>
+ </ul>
 <br>
 
 ```
@@ -135,11 +139,11 @@ Swift supports many common operators that any programming language has. In addit
 <ul>
 <li>Assignment operator <code>=</code> and compound assignment operators <code>+= </code>,...</li>
 <li>Arithmetic operators</li>
-<li>Comparision operators <code> <, > </code>,...</li>
-<li>Ternary Conditional Operator: <code>question ? answer1 : answer2</code> - It’s a shortcut for evaluating one of two expressions based on whether question is true or false.</li>
-<li>Nil-Coalescing Operator <code>a != nil ? a! : b</code> - it unwraps an optional a if it contains a value, or returns a default value b if a is nil.</li>
+<li>Comparision operators <code> <, >, <=, >= </code></li>
+<li>Ternary Conditional operator: <code>question ? answer1 : answer2</code> - It’s a shortcut for evaluating one of two expressions based on whether question is true or false.</li>
+<li>Nil-Coalescing operator <code>a != nil ? a! : b</code> - it unwraps an optional a if it contains a value, or returns a default value b if a is nil.</li>
 <li>Range operators</li>
-<li>Logical operators</li>
+<li>Logical operators</li></ul>
 
 <h2>Keywords and reserved words</h2>
 Swift has a list of keywords that cannot be used as identifiers. According to Swift guide, keywords other than `inout`, `var`, and `let` can be used as parameter names in a function declaration or function call without being escaped with backticks. Unless there is ambiguituity between refering to the member and the keyword, the member must be escaped with backticks.
@@ -152,11 +156,14 @@ Swift has a list of keywords that cannot be used as identifiers. According to Sw
 
 Swift also has a list of reserved words, including: `associativity, convenience, didSet, dynamic, final, get, indirect, infix, lazy, left, mutating, none, nonmutating, optional, override, postfix, precedence, prefix, Protocol, required, right, set, some, Type, unowned, weak`, and `willSet`. Outside the context in which they appear in the grammar, they can be used as identifiers.
 
-    <h2>Swift - a strong statically-typed language</h2>
+<h2>Swift - a strong statically-typed language</h2>
+ 
 Inherited by Objective-C, Swift is created to be a statically-typed language. Being introduced as a type-safe language, Swift recommends users to be clear about variables so that it can check for type errors before running the program (at compile time). It also binds variables at compile time, as you can see - Swift determines a datatype for variables with no prior datatype in this process. <br>
-Swift is a strong-typed language too. It is very strict in terms of types. Here is an example:
+  
+Swift is a strong-typed language too. It is very strict in terms of types. Here is an example: 
 <br>
 
+    
 ```
 minusThree = 90;
 var minusFive :UInt = 2;
@@ -167,7 +174,111 @@ print(minusThree + "5"); //error, mismatch data type
 print(minusFive - fiveTen); //even UInt and Int cannot be together :( - still figuring out how to convert the operand into the same datatype!
                     //This is too strict! There are integers!
 ```
+    
 As we can see, with very strict rules of types, mixed types operations are not allowed in Swift.
+    
+
+<h1>Selection control structures</h1>
+The Boolean values of Swift consists of <code>true</code> and <code>false</code>. Let's see how they are used in the conditional statements.<br>
+In Swift, each code block with conditional statements are delimited with open parentheses after the condition and close parentheses at the end of the statement of that condition.
+    
+<h2>Conditional statements</h2>
+<h3>If statement</h3>
+Swift's if statement has the following protocols: <br>
+<code> if condition {
+        //statement
+       } else if condition {
+        //statement
+       } else {
+        //statment
+       } </code>
+    <br>
+    
+Else if responds as an alternative <code>if</code> statement. The else clause is optional, and can be exclude if the set of conditions does not need to be complete.
+<h3>Switch statement</h3>
+    As mentioned in Swift's documentation, <code>switch</code> statement considers a value and compares it against several possible matching patterns. Swift accepts all values of the same type for switch - case. All switch statements will be considered, and a switch statement can contain multiple cases (called compound cases) <br>
+    The structure of Swift is: 
+    <br>
+    
+    ```
+    switch <code>some value to consider</code> { <br>
+    case <code>value 1</code>:
+        //do something
+    case <code>value 2, value 3</code>:
+        //do something
+    default:
+        //otherwise, do something else
+    }
+    
+    ```    
+    
+Switch statements in Swift don’t fall through the bottom of each case and into the next one by default. The entire switch statement finishes its execution as soon as the first matching case is completed. So there is no need for a break command here to stop the statement!
+    
+Other than single values, switch statements in Swift allow intervals for matching cases, called interval matching. For example:
+    
+    ```
+    let approximateCount = 62 <br>
+    let countedThings = "moons orbiting Saturn" <br>
+    let naturalCount: String <br>
+    switch approximateCount { <br>
+    case 0: <br>
+        naturalCount = "no" <br>
+    case 1..<5: <br>
+        naturalCount = "a few" <br>
+    case 5..<12: <br>
+        naturalCount = "several" <br>
+    case 12..<100: <br>
+        naturalCount = "dozens of" <br>
+    case 100..<1000: <br>
+        naturalCount = "hundreds of" <br>
+    default: <br>
+        naturalCount = "many" <br>
+    } <br>
+    print("There are \(naturalCount) \(countedThings).") <br>
+    // Prints "There are dozens of moons orbiting Saturn."<br>
+    
+    ```
+    
+Swift allows using integers, floats, doubles, and strings for interval matching cases. Although Range is quite similar to Interval, switch statements do not allow using them in their matching cases.<br>
+    
+Another type that Swift allows to use in cases is tuples. Values in tuples used in cases do not need to have similar data types, and can have /_ values to denote that it can match any value at that \_ value.<br>
+    The keyword <code>where</code> can be used as a way to add conditions to the values in the tuple. For example:
+    
+    ```
+    //example here
+    
+    ```
+ 
+ <h2>Dangling else</h2>
+    Swift does encounter Dangling else problem while using multiple nested if - else statements. For example: <br>
+    
+    ```
+    //do something
+    ```
+    
+A possible solution to avoid this problem is to use parentheses to delimit blocks strictly.
+    
+    
+ <h2>Short-circuit evaluation</h2>
+ Swift does support short-circuit evaluations with the use of Ternary Conditional operator and Nil-Coalescing operator.<br>
+ For example:
+ 
+    ```
+    let defaultColorName = "red"
+    var userDefinedColorName : String?
+
+    var colorNameToUse = userDefinedColorName ?? defaultColorName;
+
+    // userDefinedColorName co gia tri nil, nên colorNameToUse sẽ được gán tên là "red"
+    ```
+    
+    
+
+    
+    
+    
+    
+
 <h2>References</h2>
 educative, History of Swift. Retrieved at https://www.educative.io/courses/swift-programming-mobile-app/q282KZA1N33<br>
 Apple, Swift Documentation. Retrieved at https://www.swift.org/<br>
