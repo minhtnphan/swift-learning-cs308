@@ -254,7 +254,7 @@ print("There are \(naturalCount) \(countedThings).")
 
 Swift allows using `integer`, `float`, `double`, and `string` datatypes for interval matching cases. Although `range` is quite similar to Interval, switch statements do not allow using them in their matching cases.<br>
 
-Another type that Swift allows to use in cases is `tuple`. Values in tuples used in cases do not need to have similar data types, and can have  <code>_</code> values to denote that it can match any value at that <code>_</code> value.<br>
+Another type that Swift allows to use in cases is `tuple`. Values in tuples used in cases do not need to have similar data types, and can have  `_` values to denote that it can match any value at that `_` value.<br>
 The keyword <code>where</code> can be used as a way to add conditions to the values in the tuple. For example:<br>
 
 ```swift
@@ -275,16 +275,16 @@ For example:
 
 ```swift
 let defaultColorName = "red"
-var userDefinedColorName : String? //a nil-valued string
+var userDefinedColorName : String? //an Optional that holds a nil-valued String
 
 var colorNameToUse = userDefinedColorName ?? defaultColorName;
 
-// userDefinedColorName has nil value, so colorNameToUse will be "red"
+//if userDefinedColorName has nil value, colorNameToUse will be "red", else it will hold the value that userDefinedColorName has
 ```
 
 <h2>References</h2>
 educative, History of Swift. Retrieved at https://www.educative.io/courses/swift-programming-mobile-app/q282KZA1N33<br>
 Apple, Swift Documentation. Retrieved at https://www.swift.org/<br>
-exyte, Introduction to Swift. Retrieved at https://exyte.com/blog/introduciton-to-swift
+exyte, Introduction to Swift. Retrieved at https://exyte.com/blog/introduciton-to-swift<br>
 programiz, Swift guard Statement. Retrieved at https://www.programiz.com/swift-programming/guard-statement
 
