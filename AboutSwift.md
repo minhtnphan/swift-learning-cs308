@@ -286,4 +286,5 @@ var colorNameToUse = userDefinedColorName ?? defaultColorName;
 educative, History of Swift. Retrieved at https://www.educative.io/courses/swift-programming-mobile-app/q282KZA1N33<br>
 Apple, Swift Documentation. Retrieved at https://www.swift.org/<br>
 exyte, Introduction to Swift. Retrieved at https://exyte.com/blog/introduciton-to-swift
+programiz, Swift guard Statement. Retrieved at https://www.programiz.com/swift-programming/guard-statement
 
