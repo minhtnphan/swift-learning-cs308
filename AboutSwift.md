@@ -209,7 +209,7 @@ if condition {
     Since Swift requires to delimit code block clearly, dangling else can be easily avoided if we explicitly delimit code blocks. The use of the structure <code>if - else if - else</code> is recommended to delimit code blocks clearly.
 
 <h3>Guard statement</h3>
-    Guard is the opposite of <code>if</code> statement. This means that <code>guard</code> only executes else statements. However, we will go back to <code>guard</code> after learning about Swift's functions, for-loops and while-loops.
+    Guard is the opposite of <code>if</code> statement. This means that <code>guard</code> only executes else statements. However, we will go back to <code>guard</code> after learning about Swift's functions and repetition structures.
     
 <h3>Switch statement</h3>
 As mentioned in Swift's documentation, <code>switch</code> statement considers a value and compares it against several possible matching patterns. Swift accepts all values of the same type for switch - case. All switch statements will be considered, and there must be one case that matches with the switch statement. This is called the exhaustive characteristics of Swift switch-case. Consquently, Swift does not accept an empty case. Lastly, switch statement can contain multiple cases (called compound cases) <br>
@@ -281,13 +281,6 @@ var colorNameToUse = userDefinedColorName ?? defaultColorName;
 
 // userDefinedColorName has nil value, so colorNameToUse will be "red"
 ```
-
-
-
-
-
-
-
 
 <h2>References</h2>
 educative, History of Swift. Retrieved at https://www.educative.io/courses/swift-programming-mobile-app/q282KZA1N33<br>
