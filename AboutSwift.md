@@ -6,6 +6,7 @@ Get to know Swift - a programming language developed by Apple for Apple devices 
 - [Getting Started](#getting-started)
 - [Names, Types and Binding](#names-types-and-binding)
 - [Selection Control Structures](#selection-control-structures)
+- [Loops and Subroutines](#loops-and-subroutines)
 - [References](#references)
 
 <h1>Origin of Swift</h1>
@@ -281,6 +282,58 @@ var colorNameToUse = userDefinedColorName ?? defaultColorName;
 
 //if userDefinedColorName has nil value, colorNameToUse will be "red", else it will hold the value that userDefinedColorName has
 ```
+
+<h1>Loops and subroutines</h1>
+    
+<h2>Loops</h2>
+ Swift has 3 types of loops: for-in loops, while loops and a special one called repeat-while loops
+    
+<h3>For-in loops</h3>
+ The syntax of for-in loop in Swift is as follow:<br>
+    
+ ```swift
+ for variableName in [range] {
+    //Do something
+ }
+ ```
+The range used in for-in loops can be various. As suggested from Swift documentation, range can be a range of numbers, denoting by the closed range operator <code>number...number</code>. For-in loop can also iterate through an array and tuple.<br>
+<h3>While loop</h3>
+In Swift, while loop evaluates its condition at the start of each pass through the loop<br>
+The syntax of while loop is:<br>
+
+```swift
+while condtion {
+   \\Do something
+}
+```
+<h3>Repeat-while loop</h3>
+Apparently, repeat-while is similar to do-while structure in other languages in same aspects. Compared with Swift's while loop, repeat-while evaluates its condition at the end of each pass through the loop.<br>
+
+```swift
+repeat {
+    //do something
+} while condition
+```
+<h2>Functions</h2>
+
+<h3>Defining a function</h3>
+The syntax to define a function in Swift is:<br>
+
+```swift
+func functionName(parameterName: datatype) -> returnType {
+    //do something
+ }
+```
+Swift functions provide flexibility in declaring multiple parameters and return types, specifically:<br>
+    - A function in Swift can have no parameter, or many parameters of different types. Parameters follow the syntax <code>parameterName: datatype</code>, each is separated by a <code>,</code><br>
+    - A function can also return multiple values, or not. If a function needs to return multiple values, the syntax will be:<br>
+   
+```swift
+func functionName(parameterName: datatype) -> (value1Name: returnType, value2Name: returnType) {
+    //do something
+ }
+```
+    
 
 <h2>References</h2>
 educative, History of Swift. Retrieved at https://www.educative.io/courses/swift-programming-mobile-app/q282KZA1N33<br>
