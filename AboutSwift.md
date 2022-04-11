@@ -296,14 +296,41 @@ var colorNameToUse = userDefinedColorName ?? defaultColorName;
     //Do something
  }
  ```
-The range used in for-in loops can be various. As suggested from Swift documentation, range can be a range of numbers, denoting by the closed range operator <code>number...number</code>. For-in loop can also iterate through an array and tuple.<br>
+The range used in for-in loops can be various as shown in this example:<br>
+```swift
+ //prints numbers range from 0 to 10 
+ for i in 0...10{ //0...10 denotes the range 0 <= i <= 10
+    print(i);
+}
+//or we can use stride(from:to:by) to create a range
+for i in stride(from:0, to: 11, by:1) { //the range created by stride is 0 <= i < 11
+//by is used to specify the interval of each iteration
+    print(i)
+}
+//for-in loop can also iterate array
+var employees = ["Minh", "Anna", "Emma"];
+for em in employees{
+    print(em);
+}
+//where (condition) is a way to set condition for the for-in loop. 
+//The condition must return true so that the iteration can be executed
+for em in employees where (em != "Minh") {
+    print(em);
+}
+```
 <h3>While loop</h3>
 In Swift, while loop evaluates its condition at the start of each pass through the loop<br>
 The syntax of while loop is:<br>
 
 ```swift
 while condtion {
-   \\Do something
+   //do something
+}
+//example
+var i = 0;
+while (i <= 5) {
+    print(i);
+    i = i + 1;
 }
 ```
 <h3>Repeat-while loop</h3>
@@ -313,7 +340,16 @@ Apparently, repeat-while is similar to do-while structure in other languages in 
 repeat {
     //do something
 } while condition
+
+//example
+var i = 0;
+repeat {
+    print(j);
+    i = i + 1;
+} while (i <= 5)
 ```
+
+
 <h2>Functions</h2>
 
 <h3>Defining a function</h3>
@@ -325,16 +361,127 @@ func functionName(parameterName: datatype) -> returnType {
  }
 ```
 Swift functions provide flexibility in declaring multiple parameters and return types, specifically:<br>
-    - A function in Swift can have no parameter, or many parameters of different types. Parameters follow the syntax <code>parameterName: datatype</code>, each is separated by a <code>,</code><br>
-    - A function can also return multiple values, or not. If a function needs to return multiple values, the syntax will be:<br>
-   
+- A function in Swift can have no parameter, or many parameters of different types. Parameters follow the syntax <code>parameterName: datatype</code>, each is separated by a comma. For example:<br>
+
 ```swift
-func functionName(parameterName: datatype) -> (value1Name: returnType, value2Name: returnType) {
-    //do something
- }
+//a function with no parameter
+func getName() -> String {
+    return "Minh";
+}
+print(getName()); //call the function
+
+//a function with multiple parameters
+func setInfo(name: String, age: Int) {
+    var personName: String;
+    var personAge: Int;
+    personName = name;
+    personAge = age;
+}
+setInfo(name: "Minh", age: 21); //call the function - argument names must be included and in correct order in function declaration
+
+```  
+From the given syntax, we can refer to a function by the syntax <code>functionName(param1:param2:..paramN:)</code><br>
+Other than typical parameters, Swift provides the use of variadic parameters, which allows to pass in the function an undeclared number of arguments of same type! (I think it's a nice function for take in user's input in function call :P ). All inputs will be put into an array for the function to use. For example:<br>
+
+```swift
+//a function to count the number of values input by the user 
+func count(numbers:Int...) { //unknown number of inputs is declared by ...
+    var total: Int = 0;
+    for i in 1...numbers.count{
+        total = total + 1;
+    }
+    print(total);
+                
+}
+count(numbers: 1, 2, 3, 4, 51); //prints 5
 ```
     
+- A function can also return multiple values, or not. If a function does not need to return any value, the part <code> -> returnType </code> will not be included in the function declaration. If a function needs to return multiple values, all return values should be put into a tuple:<br>
+   
+```swift
+func functionName(parameterName: datatype) -> (value1Name: returnType, value2Name: returnType) //return tuple containing all return values {
+    //do something
+ }
 
+ //a function with no return values 
+func sayHello() {
+    print("Hello world");
+}
+sayHello()
+
+//a function returning a value
+func multiplication(num1: Int, num2: Int) -> Int { //no need label for return value when there is only 1 return value
+    return num1*num2;
+}
+print(multiplication(num1:2,num2:3));
+    
+//a function with multiple return values
+func getMinhsInfo() -> (name:String, age:Int, isStudent:Bool) {
+    return("Minh", 21, true); //return values should be provided as declared in the function header
+}
+print(getMinhsInfo()); //get all return values in a tuple
+//we can use tuple index or argument label to get a particular value from the tuple
+let info = getMinhsInfo();
+print(info.age);
+print(info.0);
+```
+
+From the examples above, we can see Swift requires very strict parameter and argument declarations in both function declaration and function calls. They are called parameter names and argument labels.<br>
+According to Swift guide:<br>
+- By default, "parameters use their parameter name as their argument label". For example, in the function <code>setInfo(name:age:)</code>, the parameters are <code>name</code> and <code>age</code>, hence the argument labels are also <code>name</code> and <code>age</code><br>
+- However, for the purpose of a more readable, sentence-like code, we can also declare a argument label for the parameter in the function declaration:<br>
+
+```swift
+func setInfo(myName name: String, age: Int) { 
+    //name is the parameter used inside the function, while myName is the argument label
+    var personName: String;
+    var personAge: Int;
+    personName = name;
+    personAge = age;
+    
+    print(personName, personAge);
+}
+
+setInfo(myName: "Minh", age: 21); //correct way of using argument label
+setInfo(name: "Minh", age: 21); //incorrect label, name is a parameter name so it does not exist outside the function's scope
+```
+<h3>Recursion</h3>
+Swift does allow recursive function with typical structure: a base-case to stop, and the function call. For example:<br>
+
+<h2>Swift's reference and value types</h2>
+Swift is passed-by-reference for reference types and is passed-by-value for value types.<br>
+An example that shows Swift is passed-by-reference is:
+
+```swift
+class Animal {
+    var name:String = "";
+    var wasFed: Bool = false;
+    
+}
+let dog = Animal();
+dog.name = "Pin";
+dog.wasFed = true;
+
+print(dog.wasFed) //prints true
+
+let goldenTriever = dog;
+goldenTriever.wasFed = false;
+
+print(dog.wasFed); //prints false
+print(goldenTriever.wasFed); //prints false
+```
+Apparently, dog and goldenTriever changes when one is changed. This means that both dog and goldenTriever point to the same instance of class, and hence instances of classes are passed by references. Other reference types in Swift include functions and closures. <br>
+
+The value types in Swift include Int, Double, Array, Dictionary, Set, Tuple, Struct and enum. An example with Int can be:<br>
+```swift
+a = 20;
+b = a;
+b = b + 1;
+print(a, b); //prints 20, 21
+```
+At the point ```b=a```, Swift generates a copy of ```a``` for ```b```, and hence, both variables have no relations to each other. Therefore, ```a``` does not change when ```b``` changes.
+    
+    
 <h2>References</h2>
 educative, History of Swift. Retrieved at https://www.educative.io/courses/swift-programming-mobile-app/q282KZA1N33<br>
 Apple, Swift Documentation. Retrieved at https://www.swift.org/<br>
