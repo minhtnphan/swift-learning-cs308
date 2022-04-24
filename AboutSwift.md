@@ -7,6 +7,7 @@ Get to know Swift - a programming language developed by Apple for Apple devices 
 - [Names, Types and Binding](#names-types-and-binding)
 - [Selection Control Structures](#selection-control-structures)
 - [Loops and Subroutines](#loops-and-subroutines)
+- [Objects and Classes](#objects-and-classes)
 - [References](#references)
 
 <h1>Origin of Swift</h1>
@@ -238,15 +239,15 @@ let approximateCount = 62
 let countedThings = "moons orbiting Saturn"
 let naturalCount: String
 switch approximateCount { 
-case 0: <br>
+case 0:
     naturalCount = "no"
-case 1..<5: <br>
+case 1..<5:
     naturalCount = "a few"
-case 5..<12: <br>
+case 5..<12: 
     naturalCount = "several" 
-case 12..<100: <br>
+case 12..<100:
     naturalCount = "dozens of"
-default: <br>
+default:
     naturalCount = "many"
 } 
 print("There are \(naturalCount) \(countedThings).") 
@@ -480,6 +481,14 @@ b = b + 1;
 print(a, b); //prints 20, 21
 ```
 At the point ```b=a```, Swift generates a copy of ```a``` for ```b```, and hence, both variables have no relations to each other. Therefore, ```a``` does not change when ```b``` changes.
+
+<h1>Objects and Classes</h1>
+<h2>Objects and Structs</h2>
+Of course, an object-oriented programming language supports objects! Swift does have objects, and something called struct that we will look into here:
+<h3>Objects</h3>
+<h3>Structs</h3>
+<h2>Standard methods of objects</h2>
+<h2>Inheritance</h2>
     
     
 <h2>References</h2>
