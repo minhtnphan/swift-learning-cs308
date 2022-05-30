@@ -488,6 +488,7 @@ At the point ```b=a```, Swift generates a copy of ```a``` for ```b```, and hence
 Of course, an object-oriented programming language supports objects! Swift does have objects, and something called struct that we will look into here:
 <h3>Classes</h3>
 The definition of class in Swift is:<br>
+
 ```swift
 class Person {
     //properties of Person goes here
@@ -499,6 +500,7 @@ print(minh.age) //access Person's properties/attributes
 ```
 <h3>Structs</h3>
 Structs -- short for Structures, is also another way to store different data types that relate to each other. The syntax of Structs is:<br>
+
 ```swift
 struct Student {
     var class;
@@ -508,10 +510,14 @@ struct Student {
 let minh = Student(); //instantiate a struct is similar to a class
 print(minh.class); //getting the properties/attributes is also similar
 ```
+
+<h3>Properties</h3>
+In Swift's OOP, so-called attributes, or Swift's properties are strictly defined when implementing a class.
 <h2>Inheritance</h2>
 As an Object Oriented Programming language, Swift does support inheritance. However, Swift does not allow a class to have multiple base classes, so there is no multiple inheritance support for this language. 
 <h3>Base classes and subclasses</h3>
 Inside the base classes, there are properties and methods for the objects created by that classes. The methods are not necessarily be declared inside the base class, but must be implemented by the subclasses. The syntax to declare a base class is:<br>
+
 ```swift
 class Person{
     var age = 0
@@ -527,6 +533,7 @@ class Person{
 }
 ```
 And for the subclass:<br>
+
 ```swift
 class Student: Person { //inheritance from Person is shows at the semicolon :
     var school
@@ -535,16 +542,19 @@ let Nhi = Student(); //instantiatie a Student
 print(Nhi.school); //access Nhi's school property
 print(Nhi.age); //access Nhi's age property, which is inherited from Person
 ```
-The class Student now inherits the properties of Person, and has its own properties (```school```) too! ```school``` property may not neccessary for all People, so it should not be implemented inside Person class.<br>
+The class Student now inherits the properties of Person, and has its own properties ```school``` too! ```school``` property may not neccessary for all People, so it should not be implemented inside Person class.<br>
 A subclass can also be other class' inheritance. By applying the syntax above, you have successfully implemented inheritance for the subclasses of Student. For example:<br>
+
 ```swift
 class HighSchoolStudent : Student {
     var testScore
 }
 ```
+
 <h2>Standard methods of objects</h2>
 <h3>Overriding</h3>
 Overriding means that a subclass can provide its own implementation of an instance method that it would otherwise inherit from the superclass. Swift uses the prefix ```override``` in the function declaration header to implement overriding methods. But there's more to come! Swift allows using the superclass' method inside your overriding implementations. To access the superclass' methods, use the prefix ```super```. Below is an example for overriding:<br>
+
 ```swift
 class Teacher: Person {
     var subject = "math"
@@ -559,6 +569,8 @@ let Hoang = Teacher();
 Hoang.worksAt(); //prints "teaching at Fulbright"
 print(Hoang.introduction) // prints "a human being that teaches math
 ```
+<h3>Preventing overrides</h3>
+<h2>Deinitialization</h2>
 
     
 <h2>References</h2>
