@@ -251,7 +251,8 @@ default:
     naturalCount = "many"
 } 
 print("There are \(naturalCount) \(countedThings).") 
-// Prints "There are dozens of moons orbiting Saturn.
+// Prints "There are dozens of moons orbiting Saturn".
+
 ```
 
 Swift allows using `integer`, `float`, `double`, and `string` datatypes for interval matching cases. Although `range` is quite similar to Interval, switch statements do not allow using them in their matching cases.<br>
@@ -397,7 +398,7 @@ func count(numbers:Int...) { //unknown number of inputs is declared by ...
 count(numbers: 1, 2, 3, 4, 51); //prints 5
 ```
     
-- A function can also return multiple values, or not. If a function does not need to return any value, the part <code> -> returnType </code> will not be included in the function declaration. If a function needs to return multiple values, all return values should be put into a tuple:<br>
+- A function can also return multiple values. If a function does not need to return any value, the part <code> -> returnType </code> will not be included in the function declaration. If a function needs to return multiple values, all return values should be put into a tuple:<br>
    
 ```swift
 func functionName(parameterName: datatype) -> (value1Name: returnType, value2Name: returnType) //return tuple containing all return values {
@@ -483,13 +484,82 @@ print(a, b); //prints 20, 21
 At the point ```b=a```, Swift generates a copy of ```a``` for ```b```, and hence, both variables have no relations to each other. Therefore, ```a``` does not change when ```b``` changes.
 
 <h1>Objects and Classes</h1>
-<h2>Objects and Structs</h2>
+<h2>Classes and Structs</h2>
 Of course, an object-oriented programming language supports objects! Swift does have objects, and something called struct that we will look into here:
-<h3>Objects</h3>
+<h3>Classes</h3>
+The definition of class in Swift is:<br>
+```swift
+class Person {
+    //properties of Person goes here
+    var name;
+    var age;
+}
+let minh = Person(); //instantiate a Person object
+print(minh.age) //access Person's properties/attributes
+```
 <h3>Structs</h3>
-<h2>Standard methods of objects</h2>
+Structs -- short for Structures, is also another way to store different data types that relate to each other. The syntax of Structs is:<br>
+```swift
+struct Student {
+    var class;
+    var major;
+    var gpa;
+ }
+let minh = Student(); //instantiate a struct is similar to a class
+print(minh.class); //getting the properties/attributes is also similar
+```
 <h2>Inheritance</h2>
-    
+As an Object Oriented Programming language, Swift does support inheritance. However, Swift does not allow a class to have multiple base classes, so there is no multiple inheritance support for this language. 
+<h3>Base classes and subclasses</h3>
+Inside the base classes, there are properties and methods for the objects created by that classes. The methods are not necessarily be declared inside the base class, but must be implemented by the subclasses. The syntax to declare a base class is:<br>
+```swift
+class Person{
+    var age = 0
+    var description: String {
+        return "Person on earth"
+    }
+    var introduction: String {
+        return "a human being"
+    }
+    func worksAt() {
+        // do nothing - an arbitary person may or may not have a job
+    }
+}
+```
+And for the subclass:<br>
+```swift
+class Student: Person { //inheritance from Person is shows at the semicolon :
+    var school
+}
+let Nhi = Student(); //instantiatie a Student
+print(Nhi.school); //access Nhi's school property
+print(Nhi.age); //access Nhi's age property, which is inherited from Person
+```
+The class Student now inherits the properties of Person, and has its own properties (```school```) too! ```school``` property may not neccessary for all People, so it should not be implemented inside Person class.<br>
+A subclass can also be other class' inheritance. By applying the syntax above, you have successfully implemented inheritance for the subclasses of Student. For example:<br>
+```swift
+class HighSchoolStudent : Student {
+    var testScore
+}
+```
+<h2>Standard methods of objects</h2>
+<h3>Overriding</h3>
+Overriding means that a subclass can provide its own implementation of an instance method that it would otherwise inherit from the superclass. Swift uses the prefix ```override``` in the function declaration header to implement overriding methods. But there's more to come! Swift allows using the superclass' method inside your overriding implementations. To access the superclass' methods, use the prefix ```super```. Below is an example for overriding:<br>
+```swift
+class Teacher: Person {
+    var subject = "math"
+    override func worksAt() { //initialize an override method with prefix override
+        print("teaching at Fulbright")
+    }
+        override var introduction: String { //using properties of the base class' description 
+            return super.description + " that teaches " + subject
+    }
+}
+let Hoang = Teacher();
+Hoang.worksAt(); //prints "teaching at Fulbright"
+print(Hoang.introduction) // prints "a human being that teaches math
+```
+
     
 <h2>References</h2>
 educative, History of Swift. Retrieved at https://www.educative.io/courses/swift-programming-mobile-app/q282KZA1N33<br>
