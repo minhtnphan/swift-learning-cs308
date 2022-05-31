@@ -8,4 +8,6 @@ Flappy Dove is a replication of the popular game - Flappy Bird. Flappy Dove is w
 <br>
 Flappy Dove's game rule is simple: you try to fly the dove as far as possible while avoiding the bread obstacles on the way. Each pair of breads the bird passes, you earn one point.
 Look at Flappy Dove's code [here](https://github.com/minhtnphan/swift-learning-cs308/tree/main/FlappyDove). And below is the demo of the game:<br>
+<br>
+
 ![](demo.gif)
