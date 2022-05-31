@@ -9,12 +9,14 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
+    //the GameScene's attributes are declared here
     var bird:SKSpriteNode!
     
-    var breads:SKNode!
+    var breads:SKNode! //breadObject
+    //Texture are for styling, which belongs to the node
     var breadUpTexture:SKTexture!
     var breadDownTexture:SKTexture!
-    var breadRunning:SKAction!
+    var breadRunning:SKAction! //animation
     
     var base = SKSpriteNode(imageNamed: "base.png")
     
@@ -23,6 +25,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var score:SKLabelNode!
     var scoreCount:Int = 0
     
+    //mask are created for collision detection
     let birdMask: UInt32 = 1 << 0
     let breadMask: UInt32 = 1 << 1
     let scoreMask: UInt32 = 1 << 2
@@ -31,11 +34,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var restartGame = false
     
     override func didMove(to view: SKView) {
-        //initialize objects on the game scene
+        //override function from UIResponder to initialize objects of game scene when the scene is called in main
         //initialize physics
         self.physicsWorld.contactDelegate = self
     
-        //initialize background
+        //initialize background attributes
         background.position = CGPoint(x: 0, y: 0)
         background.size.width = self.size.width
         background.size.height = self.size.height
@@ -44,7 +47,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         breads = SKNode()
         breads.zPosition = 1
 
-        //create objects and add them to the game scence
+        //create objects (nodes) and add them to the game scence
         makeBase()
         makeBird()
         makeScoreBoard()
@@ -59,6 +62,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        //override function from UIResponder -- handling touching events
         //when there are touches -> add velocity to the bird
         if breads.speed > 0 {
             for _ in touches {
@@ -74,6 +78,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
+        //function to control game state of gaining score/losing
         //idea retrieved from FlappySwift
         //https://github.com/fullstackio/FlappySwift
         //detect if the bird gains a score: create a Score bitmask between the breads
@@ -101,10 +106,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //for random placements of breads
         let randomHeight = Double(arc4random_uniform(UInt32(self.frame.height/4)) + UInt32(self.frame.height/4))
         
-        //set attributes for the upper bread
+        //set attributes for the upper bread: position, physicsBody (for collision detection)
         let breadUp = SKSpriteNode(texture: breadUpTexture)
         breadUp.position = CGPoint(x: 0.0, y: randomHeight)
-
+        
         breadUp.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: breadUp.size.width * 0.85, height: breadUp.size.height * 0.85))
         breadUp.physicsBody?.isDynamic = false
         breadUp.physicsBody?.allowsRotation = false
@@ -113,7 +118,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         breadPair.addChild(breadUp)
         
-        //set attributes for the lower bread
+        //set attributes for the lower bread: position, physicsBody (for collision detection)
         let breadDown = SKSpriteNode(texture: breadDownTexture)
         breadDown.position = CGPoint(x: 0.0, y: randomHeight - Double(breadDown.size.height) - 250.0)
         
@@ -146,11 +151,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func makeBreadSequence() {
+        //function to create a breadPair motion
         breadUpTexture = SKTexture(imageNamed: "bread (1).png")
         breadDownTexture = SKTexture(imageNamed: "bread (1).png")
         
+        //defining the distance that a pair can move
         let breadMovingDistance = CGFloat(self.frame.size.width * 2)
-        //the breads move from with distance of 2*screen width
+        //define an action attribute for pair of breads
         let moveBread = SKAction.moveBy(x: -breadMovingDistance, y: 0.0, duration: TimeInterval(0.01 * breadMovingDistance))
         //remove the breads from the scene when it finishes moving
         let removeBread = SKAction.removeFromParent()
@@ -159,6 +166,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func runBread() {
+        //function to create a sequence of breadPair motion
         makeBreadSequence()
         //initialize the bread moving actions
         let runBreads = SKAction.run(makeBreads)
@@ -171,6 +179,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func resetGame() {
+        //function to reset the game
         if let view = self.view {
             if let scene = SKScene(fileNamed: "GameScene") {
                 scene.scaleMode = .aspectFill
@@ -190,6 +199,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func makeBird() {
+        //function to create a bird
+        //add values to the attribute of bird node: position, layer position, physics body
         let birdTexture1 = SKTexture(imageNamed: "trash dove (pixel).png")
         let birdTexture2 = SKTexture(imageNamed: "trash dove (pixel) (2).png")
 
@@ -214,6 +225,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func makeBase() {
+        //function to create a base
+        //add values to attribute of base node
         base.position = CGPoint(x: 0, y: -550)
         base.physicsBody = SKPhysicsBody(rectangleOf: base.size)
         base.physicsBody?.categoryBitMask = groundMask
@@ -223,6 +236,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     func makeScoreBoard() {
+        //function to add values to attributes scoreboard node
         score = SKLabelNode(fontNamed: "Upheaval TT (BRK)")
         score.fontColor = SKColor.black
         score.fontSize = 100
