@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1732F8F12843D8860071F381 /* base.png in Resources */ = {isa = PBXBuildFile; fileRef = 1732F8F02843D8860071F381 /* base.png */; };
+		179E0DE52845DD34009C4DE7 /* bread (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 179E0DE12845DD34009C4DE7 /* bread (1).png */; };
+		179E0DE62845DD34009C4DE7 /* trash dove (pixel) (2).png in Resources */ = {isa = PBXBuildFile; fileRef = 179E0DE22845DD34009C4DE7 /* trash dove (pixel) (2).png */; };
+		179E0DE72845DD34009C4DE7 /* flappy dove bg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 179E0DE32845DD34009C4DE7 /* flappy dove bg.jpeg */; };
+		179E0DE82845DD34009C4DE7 /* trash dove (pixel).png in Resources */ = {isa = PBXBuildFile; fileRef = 179E0DE42845DD34009C4DE7 /* trash dove (pixel).png */; };
 		17C23E5F2822BDEA00D69094 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C23E5E2822BDEA00D69094 /* AppDelegate.swift */; };
 		17C23E612822BDEA00D69094 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 17C23E602822BDEA00D69094 /* GameScene.sks */; };
 		17C23E632822BDEA00D69094 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 17C23E622822BDEA00D69094 /* Actions.sks */; };
@@ -19,11 +23,7 @@
 		17C23E792822BDEB00D69094 /* FlappyDoveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C23E782822BDEB00D69094 /* FlappyDoveTests.swift */; };
 		17C23E832822BDEB00D69094 /* FlappyDoveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C23E822822BDEB00D69094 /* FlappyDoveUITests.swift */; };
 		17C23E852822BDEB00D69094 /* FlappyDoveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C23E842822BDEB00D69094 /* FlappyDoveUITestsLaunchTests.swift */; };
-		17CCC0A7284231F700BD91B0 /* bread (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 17CCC0A6284231F700BD91B0 /* bread (1).png */; };
 		17CCC0AA2842469B00BD91B0 /* upheavtt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 17CCC0A82842443700BD91B0 /* upheavtt.ttf */; };
-		17E715D32842103A00987163 /* trash dove (pixel) (2).png in Resources */ = {isa = PBXBuildFile; fileRef = 17E715D12842103A00987163 /* trash dove (pixel) (2).png */; };
-		17E715D42842103A00987163 /* trash dove (pixel).png in Resources */ = {isa = PBXBuildFile; fileRef = 17E715D22842103A00987163 /* trash dove (pixel).png */; };
-		17EBE361283A558C004F2C4D /* flappy dove bg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 17EBE360283A558C004F2C4D /* flappy dove bg.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +45,10 @@
 
 /* Begin PBXFileReference section */
 		1732F8F02843D8860071F381 /* base.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = base.png; sourceTree = "<group>"; };
+		179E0DE12845DD34009C4DE7 /* bread (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bread (1).png"; sourceTree = "<group>"; };
+		179E0DE22845DD34009C4DE7 /* trash dove (pixel) (2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trash dove (pixel) (2).png"; sourceTree = "<group>"; };
+		179E0DE32845DD34009C4DE7 /* flappy dove bg.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "flappy dove bg.jpeg"; sourceTree = "<group>"; };
+		179E0DE42845DD34009C4DE7 /* trash dove (pixel).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trash dove (pixel).png"; sourceTree = "<group>"; };
 		17C23E5B2822BDEA00D69094 /* FlappyDove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlappyDove.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17C23E5E2822BDEA00D69094 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17C23E602822BDEA00D69094 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -59,12 +63,8 @@
 		17C23E7E2822BDEB00D69094 /* FlappyDoveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlappyDoveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17C23E822822BDEB00D69094 /* FlappyDoveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlappyDoveUITests.swift; sourceTree = "<group>"; };
 		17C23E842822BDEB00D69094 /* FlappyDoveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlappyDoveUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		17CCC0A6284231F700BD91B0 /* bread (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bread (1).png"; path = "../../bread (1).png"; sourceTree = "<group>"; };
 		17CCC0A82842443700BD91B0 /* upheavtt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = upheavtt.ttf; sourceTree = "<group>"; };
 		17CCC0AB284248C700BD91B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		17E715D12842103A00987163 /* trash dove (pixel) (2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "trash dove (pixel) (2).png"; path = "../../trash dove (pixel) (2).png"; sourceTree = "<group>"; };
-		17E715D22842103A00987163 /* trash dove (pixel).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "trash dove (pixel).png"; path = "../../trash dove (pixel).png"; sourceTree = "<group>"; };
-		17EBE360283A558C004F2C4D /* flappy dove bg.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "flappy dove bg.jpeg"; path = "../../flappy dove bg.jpeg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,11 +121,11 @@
 				17C23E602822BDEA00D69094 /* GameScene.sks */,
 				17C23E622822BDEA00D69094 /* Actions.sks */,
 				17C23E642822BDEA00D69094 /* GameScene.swift */,
+				179E0DE12845DD34009C4DE7 /* bread (1).png */,
+				179E0DE32845DD34009C4DE7 /* flappy dove bg.jpeg */,
+				179E0DE22845DD34009C4DE7 /* trash dove (pixel) (2).png */,
+				179E0DE42845DD34009C4DE7 /* trash dove (pixel).png */,
 				1732F8F02843D8860071F381 /* base.png */,
-				17CCC0A6284231F700BD91B0 /* bread (1).png */,
-				17E715D12842103A00987163 /* trash dove (pixel) (2).png */,
-				17E715D22842103A00987163 /* trash dove (pixel).png */,
-				17EBE360283A558C004F2C4D /* flappy dove bg.jpeg */,
 				17C23E662822BDEA00D69094 /* GameViewController.swift */,
 				17C23E682822BDEA00D69094 /* Main.storyboard */,
 				17C23E6B2822BDEB00D69094 /* Assets.xcassets */,
@@ -255,16 +255,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17CCC0A7284231F700BD91B0 /* bread (1).png in Resources */,
 				17C23E6A2822BDEA00D69094 /* Main.storyboard in Resources */,
 				17C23E612822BDEA00D69094 /* GameScene.sks in Resources */,
 				17C23E6C2822BDEB00D69094 /* Assets.xcassets in Resources */,
 				17CCC0AA2842469B00BD91B0 /* upheavtt.ttf in Resources */,
-				17E715D32842103A00987163 /* trash dove (pixel) (2).png in Resources */,
+				179E0DE72845DD34009C4DE7 /* flappy dove bg.jpeg in Resources */,
+				179E0DE62845DD34009C4DE7 /* trash dove (pixel) (2).png in Resources */,
 				1732F8F12843D8860071F381 /* base.png in Resources */,
 				17C23E6F2822BDEB00D69094 /* LaunchScreen.storyboard in Resources */,
-				17E715D42842103A00987163 /* trash dove (pixel).png in Resources */,
-				17EBE361283A558C004F2C4D /* flappy dove bg.jpeg in Resources */,
+				179E0DE52845DD34009C4DE7 /* bread (1).png in Resources */,
+				179E0DE82845DD34009C4DE7 /* trash dove (pixel).png in Resources */,
 				17C23E632822BDEA00D69094 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
