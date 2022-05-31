@@ -1,5 +1,6 @@
 # swift-learning-cs308
 This is the repository for my project in Programming Languages course, Spring 2022 at Fulbright University Vietnam.<br>
+<br>
 The repo contains my notes on Swift programming language, and a project to apply my learnings of the language to real-life application.<br>
 For PLPs/Swift notes, please see [About Swift](https://github.com/minhtnphan/swift-learning-cs308/blob/main/AboutSwift.md) markdown and [helloworld](https://github.com/minhtnphan/swift-learning-cs308/tree/main/helloworld) folder.
 
