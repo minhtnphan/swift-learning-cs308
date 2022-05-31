@@ -10,6 +10,8 @@ Get to know Swift - a programming language developed by Apple for Apple devices 
 - [Objects and Classes](#objects-and-classes)
 - [References](#references)
 
+All the sample code in this sheet can be retrieved at [helloworld folder](https://github.com/minhtnphan/swift-learning-cs308/tree/main/helloworld) in this repo.
+
 <h1>Origin of Swift</h1>
 Swift was first introduced in Worldwide Developers Conference in 2014 of Apple. Prior to Swift, Apple mainly used Objective-C to develop their products. However, the Apple developers (including Bertrand Serlet) realized that Apple's applications needed to be developed by a safer language than C-based languages in terms of memory management and syntax. Swift was created as an alternative to Objective-C with simpler syntax and conventions for the purpose of easy, faster code that avoids common reasons for crashes during runtime.
 <br>
@@ -75,8 +77,8 @@ Run the program by clicking the run button on the top left of the Xcode window.
 There are 2 ways to comment on Swift code, specifically:
 
 <ul>
-<li>For single line comment: use //</li>
-<li> For multiline comment: use /*...*/</li>
+    <li>For single line comment: use <code>//</code> </li>
+    <li> For multiline comment: use <code>/*...*/</code> </li>
 </ul>
 
 <h1>Names, Types and Binding</h1>
@@ -85,7 +87,7 @@ There are 2 ways to comment on Swift code, specifically:
 Swift's built-in data types include Int, UInt, Float, Double, Bool, String, Character, Tuple and Optional.
 <ul>
 <li>UInt is used to represent unsigned integers while Int represents sign integers</li>
-<li>Optional stores variables that can either hold a value or not</li>
+<li>Optional stores variables that can either hold a value or not. If an optinal variable holds a value, it would be value of a listed type, else it will hold the value <code>nil</code> (which is similar to <code>null</code> in other languages)</li>
 </ul>
 Examples will be provide in the next section.
 
@@ -104,7 +106,7 @@ var 21_twentyFive = 9; //no number at the beginning
 These conventions are very similar to Objective-C - Swift's ancestor, and other object-oriented programming languages too!
 
 <h2>Declaring variables and constants</h2>
-Swift is neither implicitly-typed nor explicitly-typed language. It depends on the coders whether to declare the variable's data type or not, and it is okay if they do not.
+Swift's variable declarations can be either explicit or implicit. It depends on the coders whether to declare the variable's data type or not, and it is okay if they do not.
 <br>
 <ul>
 <li>The syntax for declaring a variable in Swift is <code> var variableName: Datatype = expression;</code> or  <code> var variableName = expression;</code></li>
@@ -127,12 +129,12 @@ var trueFalse = true; //declaring a Boolean variable
 var emptyIntArray: [Int] = []; //declaring an integer array - data type of the array should be declared in []
 var notEmptyIntArry = [1, 2, 3, 4];
 
-var name1: String? = "Bertie"; //this is an optional
+var name1: String? = "Bertie"; //this is an optional, meaning that name1 can contain "Bertie" or nil
 var name2: String = "Bertie"; //this is a string
 
 ```
 
-However, there are some cases that Swift can mistaken your variable's datatype if you do not declare it while initializing the variable. One example could be:
+However, there are some cases that Swift can mistaken your variable's datatype if you do not declare it while initializing the variable. This is something we should be aware of as Swift allows both implicit and explicit declarations of variables. One example could be:
 
 ```swift
 var characterOnly: Character = "c";
@@ -182,7 +184,7 @@ print(minusThree + "5"); //error, mismatch data type
 print(minusFive - fiveTen); //even UInt and Int cannot be together :( 
 ```
 
-As we can see, with very strict rules of types, mixed types operations are not allowed in Swift.
+With very strict rules of types, mixed types operations are not allowed in Swift.
 
 
 <h1>Selection control structures</h1>
@@ -211,8 +213,52 @@ if condition {
     Since Swift requires to delimit code block clearly, dangling else can be easily avoided if we explicitly delimit code blocks. The use of the structure <code>if - else if - else</code> is recommended to delimit code blocks clearly.
 
 <h3>Guard statement</h3>
-    Guard is the opposite of <code>if</code> statement. This means that <code>guard</code> only executes else statements. However, we will go back to <code>guard</code> after learning about Swift's functions and repetition structures.
+    Guard is the opposite of <code>if</code> statement. This means that <code>guard</code> only executes else statements. However, <code>guard</code> can only be compiled in while loop and functions only (if you have not reached function and selection control statements, go through them first!) The general syntax of guard will be:<br>
     
+ ```swift
+ guard expression else {
+  // statements
+  // control statement: return, break, continue or throw to exit guard scope
+}
+```
+    
+Here, the expression must be evaluated into true or false.
+    <ul>
+        <li><code>expression = true</code>: the statements inside the block will not be executed</li>
+        <li><code>expression = false</code>: the statements inside the block will not executed</li>
+    </ul>
+An example would be:<br>
+    
+```swift
+//using while loop
+var i = 2
+while (i <= 10) {
+  // guard condition to check the even number 
+  guard i % 2 == 0 else {
+     i = i + 1
+    continue
+  }
+  print(i)
+  i = i + 1
+} 
+//using function
+func checkOddEven() {
+  var number = 23
+
+  // use of guard statement
+  guard number % 2 == 0 else {
+    
+    print("Odd Number")
+    return
+  }
+
+  print("Even Number")
+}
+
+// function call
+checkOddEven()
+```
+              
 <h3>Switch statement</h3>
 As mentioned in Swift's documentation, <code>switch</code> statement considers a value and compares it against several possible matching patterns. Swift accepts all values of the same type for switch - case. All switch statements will be considered, and there must be one case that matches with the switch statement. This is called the exhaustive characteristics of Swift switch-case. Consquently, Swift does not accept an empty case. Lastly, switch statement can contain multiple cases (called compound cases) <br>
 The structure of Swift is: 
@@ -278,7 +324,7 @@ For example:
 
 ```swift
 let defaultColorName = "red"
-var userDefinedColorName : String? //an Optional that holds a nil-valued String
+var userDefinedColorName : String? //an Optional that holds a either a String value, or nil
 
 var colorNameToUse = userDefinedColorName ?? defaultColorName;
 
@@ -448,10 +494,24 @@ setInfo(myName: "Minh", age: 21); //correct way of using argument label
 setInfo(name: "Minh", age: 21); //incorrect label, name is a parameter name so it does not exist outside the function's scope
 ```
 <h3>Recursion</h3>
-Swift does allow recursive function with typical structure: a base-case to stop, and the function call. For example:<br>
+Swift does allow recursive function with typical structure: a base-case to stop the recursive calls, and the function call. For example:<br>
+
+```swift
+//recursive function to calculate factorial of a number
+func factorial(number:Int) -> Int {
+    //base case
+    if (number == 0) {
+        return 1;
+    }
+    return number * factorial(number:number - 1);
+}
+
+var factorial_result = factorial(number:5);
+print(factorial_result);
+```
 
 <h2>Swift's reference and value types</h2>
-Swift is passed-by-reference for reference types and is passed-by-value for value types.<br>
+Swift is passed-by-reference for reference types, e.g. classes and functions; and is passed-by-value for others, e.g. structs, enums, string, arrays...<br>
 An example that shows Swift is passed-by-reference is:
 
 ```swift
@@ -492,38 +552,162 @@ The definition of class in Swift is:<br>
 ```swift
 class Person {
     //properties of Person goes here
-    var name;
-    var age;
+    var name: String
+    var age: Int
 }
-let minh = Person(); //instantiate a Person object
+let minh = Person() //instantiate a Person object
 print(minh.age) //access Person's properties/attributes
 ```
+Class in Swift are passed-by-reference, so it is assignment to a variable rather than making copies. For an example, go back to our Dog class and see how Dog and goldenRetriever is actually one instance with 2 names :D
+
 <h3>Structs</h3>
 Structs -- short for Structures, is also another way to store different data types that relate to each other. The syntax of Structs is:<br>
 
 ```swift
 struct Student {
-    var class;
-    var major;
-    var gpa;
+    var classOf: Int
+    var major: String
+    var gpa: Double
  }
-let minh = Student(); //instantiate a struct is similar to a class
-print(minh.class); //getting the properties/attributes is also similar
+let minh = Student() //instantiate a struct is similar to a class
+print(minh.class) //getting the properties/attributes is also similar
 ```
-
+Interestingly, struct is passed by value while class is passed by reference. Take an example from our Student struct:<br>
+```swift
+let minh = Student(classOf: 2023, major: "CS", gpa: 4.0)
+var giang = minh
+giang.major = "arts"
+print("minh's major is \(minh.major)")  //print CS
+print("giang's major is \(giang.major)") //prints arts 
+```
+When <code>giang</code> was given the values belonged to <code>minh</code>, Swift creates a copy of <code>minh</code>'s values and put into <code>giang</code>'s instance. Therefore, <code>giang</code> and <code>minh</code> are 2 separate instances, thus changing values of one instance does not affect the other one.
 <h3>Properties</h3>
-In Swift's OOP, so-called attributes, or Swift's properties are strictly defined when implementing a class.
+You may be familiar with the term attribute in other languages' OOP, such as Java. In Swift, they are called properties, which associate values with a particular class, structure, or enumeration. Additionally, Swift is very specific about declaring properties inside in class. There are 3 types of properties: stored properties, computed properties and lazy stored property, specifically:<br>
+<ul>
+    <li>Stored properties are constants or variables that are stored as part of an instance of a class or struct</li>
+    <li>Lazy stored properties are properties that are not calculated until the first time they are used. The lazy stored properties are declared with the keyword <code>lazy</code> at the front</li>
+    <li>Computed properties are classes, structs or enumurations - things that do not actually store values. There will be getters and setters to retrieve the values from these properties</li>
+</ul>
+Here is an example of declaring properties from Swift document:<br>
+
+```swift
+struct Point {
+    var x = 0.0, y = 0.0 //declaring a stored property
+}
+struct Thickness {
+    var thick = 0.0
+}
+struct Size {
+    var width = 0.0, 
+    height = 0.0
+}
+struct Rect {
+    var origin = Point()
+    var size = Size()
+    lazy var thickness = Thickness() //declaring a lazy store property 
+    //declaring a computed property i.e Point with getter and setter
+    var center: Point { 
+        get {
+            let centerX = origin.x + (size.width / 2)
+            let centerY = origin.y + (size.height / 2)
+            return Point(x: centerX, y: centerY)
+        }
+        set(newCenter) {
+            origin.x = newCenter.x - (size.width / 2)
+            origin.y = newCenter.y - (size.height / 2)
+        }
+    }
+}
+var square = Rect(origin: Point(x: 0.0, y: 0.0),
+                  size: Size(width: 10.0, height: 10.0))
+let initialSquareCenter = square.center
+// initialSquareCenter is at (5.0, 5.0)
+square.center = Point(x: 15.0, y: 15.0)
+print("square.origin is now at (\(square.origin.x), \(square.origin.y))")
+// Prints "square.origin is now at (10.0, 10.0)"
+```
+<h2>Standard methods of objects</h2>
+<h3>Initializers</h3>
+Initializers are called to create a new instance of a particular type. The syntax for intializer is:<br>
+
+```swift
+init() {
+    // perform some initialization here
+}
+```
+For instializers with parameters, we have an example from Student:<br>
+
+```swift
+struct Student {
+    var classOf: Int
+    var major: String
+    var gpa: Double
+    init(classOf:Int, major:String, gpa:Double) {
+        self.classOf = classOf
+        self.major = major
+        self.gpa = gpa
+    }
+ }
+ let khoi = Student(classOf:2023, major:"CS", gpa:3.999) //using instializer
+ ```
+<h3>Instance methods</h3>
+Instance methods are methods that belong to instances of a class or structure. Instance methods provide ways to access and modify the instance's properties. They have the exact same syntax as Functions, which have been explained above. For example with Person class:<br>
+
+```swift
+class Person {
+    var name:String
+    var age: Int
+    func ageAge() {
+        age = age + 1
+    }
+    func changeName() {
+        name = "New Person"
+    }
+    func changeName(newName: String) {
+        name = newName
+    }
+}
+```
+ For struct, it is a different case from class. Sicne struct is passed by value, its properties cannot be modified within instance methods. Therefore, to modify the properties of your structure or enumeration within a particular method, you can opt in to <code>mutating</code> behavior for that method.
+```swift
+struct Student {
+    var classOf: Int
+    var major: String
+    var gpa: Double
+    init(classOf:Int, major:String, gpa:Double) {
+        self.classOf = classOf
+        self.major = major
+        self.gpa = gpa
+    }
+    mutating changeClass(classYear:Int) {
+        classOf = 2023
+    }
+ }
+ 
+var nghi = Student(classOf:2020, major: "CS", gpa:3.6)
+nghi.changeClass(classYear:2023)
+print("Now nghi's class is \(nghi.classOf)")
+ ```
+ Lastly, Swift also uses the keyword <code>self</code> to refer to the current instance within its own instance methods. Self does not need to be used many often, but is actually helpful for helping the compiler to distinguish the instance's properties and a variable of same name. 
+<h3>Type methods</h3>
+Similar to instance methods, type methods are functions defining for a class or struct. Type methods are declared by adding the keyword <code>static</code> before <code>func</code>. Classes can use the <code>class</code> keyword instead, to allow subclasses to override the superclass’s implementation of that method. The syntax for type methods is:<br>
+
+```swift
+class SomeClass {
+    class func someTypeMethod() {
+        // type method implementation goes here
+    }
+}
+SomeClass.someTypeMethod()
+```
 <h2>Inheritance</h2>
-As an Object Oriented Programming language, Swift does support inheritance. However, Swift does not allow a class to have multiple base classes, so there is no multiple inheritance support for this language. 
+As an Object Oriented Programming language, Swift does support inheritance. However, Swift does not allow a class to have multiple base classes, so there is no multiple inheritance support for this language. In addition, Swift does not require to have an interface for custom behaviors and intances.
 <h3>Base classes and subclasses</h3>
 Inside the base classes, there are properties and methods for the objects created by that classes. The methods are not necessarily be declared inside the base class, but must be implemented by the subclasses. The syntax to declare a base class is:<br>
 
 ```swift
 class Person{
     var age = 0
-    var description: String {
-        return "Person on earth"
-    }
     var introduction: String {
         return "a human being"
     }
@@ -542,6 +726,7 @@ let Nhi = Student(); //instantiatie a Student
 print(Nhi.school); //access Nhi's school property
 print(Nhi.age); //access Nhi's age property, which is inherited from Person
 ```
+
 The class Student now inherits the properties of Person, and has its own properties ```school``` too! ```school``` property may not neccessary for all People, so it should not be implemented inside Person class.<br>
 A subclass can also be other class' inheritance. By applying the syntax above, you have successfully implemented inheritance for the subclasses of Student. For example:<br>
 
@@ -550,10 +735,9 @@ class HighSchoolStudent : Student {
     var testScore
 }
 ```
-
-<h2>Standard methods of objects</h2>
 <h3>Overriding</h3>
-Overriding means that a subclass can provide its own implementation of an instance method that it would otherwise inherit from the superclass. Swift uses the prefix ```override``` in the function declaration header to implement overriding methods. But there's more to come! Swift allows using the superclass' method inside your overriding implementations. To access the superclass' methods, use the prefix ```super```. Below is an example for overriding:<br>
+Overriding means that a subclass can provide its own implementation of an instance method that it would otherwise inherit from the superclass. Swift uses the prefix <code>override</code> in the function declaration header to implement overriding methods.<br>
+Here's another twist: Swift allows to use the superclass' method <b>inside your overriding implementations</b>. To access the superclass' methods, use the prefix <code>super</code>. Below is an example for overriding, and using superclass methods inside the overriding method:<br>
 
 ```swift
 class Teacher: Person {
@@ -562,16 +746,23 @@ class Teacher: Person {
         print("teaching at Fulbright")
     }
         override var introduction: String { //using properties of the base class' description 
-            return super.description + " that teaches " + subject
+            return super.introduction + " that teaches " + subject
     }
 }
-let Hoang = Teacher();
+let Hoang = Teacher(name:"Hoang", age: 30);
 Hoang.worksAt(); //prints "teaching at Fulbright"
-print(Hoang.introduction) // prints "a human being that teaches math
+print(Hoang.introduction)
 ```
 <h3>Preventing overrides</h3>
+Swift allows to prevent a method, property, or subscript from being overridden by marking it as final. All you need to do is to put <code>final</code> modifier before the method, property, or subscript’s introducer keyword (such as final var, final func, final class func, and final subscript).
 <h2>Deinitialization</h2>
+According to Swift documentation, a deinitializer is called immediately before a class instance is deallocated. The purpose of deinitialization is to free up space when you do not need the instance anymore. Class definitions can have at most one deinitializer per class.<br>
 
+```swift
+deinit {
+    // perform the deinitialization
+}
+```
     
 <h2>References</h2>
 educative, History of Swift. Retrieved at https://www.educative.io/courses/swift-programming-mobile-app/q282KZA1N33<br>
