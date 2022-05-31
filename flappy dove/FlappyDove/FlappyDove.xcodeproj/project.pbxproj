@@ -1,0 +1,647 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1732F8F12843D8860071F381 /* base.png in Resources */ = {isa = PBXBuildFile; fileRef = 1732F8F02843D8860071F381 /* base.png */; };
+		17C23E5F2822BDEA00D69094 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C23E5E2822BDEA00D69094 /* AppDelegate.swift */; };
+		17C23E612822BDEA00D69094 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 17C23E602822BDEA00D69094 /* GameScene.sks */; };
+		17C23E632822BDEA00D69094 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 17C23E622822BDEA00D69094 /* Actions.sks */; };
+		17C23E652822BDEA00D69094 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C23E642822BDEA00D69094 /* GameScene.swift */; };
+		17C23E672822BDEA00D69094 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C23E662822BDEA00D69094 /* GameViewController.swift */; };
+		17C23E6A2822BDEA00D69094 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17C23E682822BDEA00D69094 /* Main.storyboard */; };
+		17C23E6C2822BDEB00D69094 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17C23E6B2822BDEB00D69094 /* Assets.xcassets */; };
+		17C23E6F2822BDEB00D69094 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17C23E6D2822BDEB00D69094 /* LaunchScreen.storyboard */; };
+		17C23E792822BDEB00D69094 /* FlappyDoveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C23E782822BDEB00D69094 /* FlappyDoveTests.swift */; };
+		17C23E832822BDEB00D69094 /* FlappyDoveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C23E822822BDEB00D69094 /* FlappyDoveUITests.swift */; };
+		17C23E852822BDEB00D69094 /* FlappyDoveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C23E842822BDEB00D69094 /* FlappyDoveUITestsLaunchTests.swift */; };
+		17CCC0A7284231F700BD91B0 /* bread (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 17CCC0A6284231F700BD91B0 /* bread (1).png */; };
+		17CCC0AA2842469B00BD91B0 /* upheavtt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 17CCC0A82842443700BD91B0 /* upheavtt.ttf */; };
+		17E715D32842103A00987163 /* trash dove (pixel) (2).png in Resources */ = {isa = PBXBuildFile; fileRef = 17E715D12842103A00987163 /* trash dove (pixel) (2).png */; };
+		17E715D42842103A00987163 /* trash dove (pixel).png in Resources */ = {isa = PBXBuildFile; fileRef = 17E715D22842103A00987163 /* trash dove (pixel).png */; };
+		17EBE361283A558C004F2C4D /* flappy dove bg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 17EBE360283A558C004F2C4D /* flappy dove bg.jpeg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		17C23E752822BDEB00D69094 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 17C23E532822BDEA00D69094 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 17C23E5A2822BDEA00D69094;
+			remoteInfo = FlappyDove;
+		};
+		17C23E7F2822BDEB00D69094 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 17C23E532822BDEA00D69094 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 17C23E5A2822BDEA00D69094;
+			remoteInfo = FlappyDove;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1732F8F02843D8860071F381 /* base.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = base.png; sourceTree = "<group>"; };
+		17C23E5B2822BDEA00D69094 /* FlappyDove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlappyDove.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		17C23E5E2822BDEA00D69094 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		17C23E602822BDEA00D69094 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		17C23E622822BDEA00D69094 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		17C23E642822BDEA00D69094 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		17C23E662822BDEA00D69094 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		17C23E692822BDEA00D69094 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		17C23E6B2822BDEB00D69094 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		17C23E6E2822BDEB00D69094 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		17C23E742822BDEB00D69094 /* FlappyDoveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlappyDoveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		17C23E782822BDEB00D69094 /* FlappyDoveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlappyDoveTests.swift; sourceTree = "<group>"; };
+		17C23E7E2822BDEB00D69094 /* FlappyDoveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlappyDoveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		17C23E822822BDEB00D69094 /* FlappyDoveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlappyDoveUITests.swift; sourceTree = "<group>"; };
+		17C23E842822BDEB00D69094 /* FlappyDoveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlappyDoveUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		17CCC0A6284231F700BD91B0 /* bread (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bread (1).png"; path = "../../bread (1).png"; sourceTree = "<group>"; };
+		17CCC0A82842443700BD91B0 /* upheavtt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = upheavtt.ttf; sourceTree = "<group>"; };
+		17CCC0AB284248C700BD91B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		17E715D12842103A00987163 /* trash dove (pixel) (2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "trash dove (pixel) (2).png"; path = "../../trash dove (pixel) (2).png"; sourceTree = "<group>"; };
+		17E715D22842103A00987163 /* trash dove (pixel).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "trash dove (pixel).png"; path = "../../trash dove (pixel).png"; sourceTree = "<group>"; };
+		17EBE360283A558C004F2C4D /* flappy dove bg.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "flappy dove bg.jpeg"; path = "../../flappy dove bg.jpeg"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		17C23E582822BDEA00D69094 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17C23E712822BDEB00D69094 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17C23E7B2822BDEB00D69094 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		17C23E522822BDEA00D69094 = {
+			isa = PBXGroup;
+			children = (
+				17C23E5D2822BDEA00D69094 /* FlappyDove */,
+				17C23E772822BDEB00D69094 /* FlappyDoveTests */,
+				17C23E812822BDEB00D69094 /* FlappyDoveUITests */,
+				17C23E5C2822BDEA00D69094 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		17C23E5C2822BDEA00D69094 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				17C23E5B2822BDEA00D69094 /* FlappyDove.app */,
+				17C23E742822BDEB00D69094 /* FlappyDoveTests.xctest */,
+				17C23E7E2822BDEB00D69094 /* FlappyDoveUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		17C23E5D2822BDEA00D69094 /* FlappyDove */ = {
+			isa = PBXGroup;
+			children = (
+				17CCC0AB284248C700BD91B0 /* Info.plist */,
+				17CCC0A82842443700BD91B0 /* upheavtt.ttf */,
+				17C23E5E2822BDEA00D69094 /* AppDelegate.swift */,
+				17C23E602822BDEA00D69094 /* GameScene.sks */,
+				17C23E622822BDEA00D69094 /* Actions.sks */,
+				17C23E642822BDEA00D69094 /* GameScene.swift */,
+				1732F8F02843D8860071F381 /* base.png */,
+				17CCC0A6284231F700BD91B0 /* bread (1).png */,
+				17E715D12842103A00987163 /* trash dove (pixel) (2).png */,
+				17E715D22842103A00987163 /* trash dove (pixel).png */,
+				17EBE360283A558C004F2C4D /* flappy dove bg.jpeg */,
+				17C23E662822BDEA00D69094 /* GameViewController.swift */,
+				17C23E682822BDEA00D69094 /* Main.storyboard */,
+				17C23E6B2822BDEB00D69094 /* Assets.xcassets */,
+				17C23E6D2822BDEB00D69094 /* LaunchScreen.storyboard */,
+			);
+			path = FlappyDove;
+			sourceTree = "<group>";
+		};
+		17C23E772822BDEB00D69094 /* FlappyDoveTests */ = {
+			isa = PBXGroup;
+			children = (
+				17C23E782822BDEB00D69094 /* FlappyDoveTests.swift */,
+			);
+			path = FlappyDoveTests;
+			sourceTree = "<group>";
+		};
+		17C23E812822BDEB00D69094 /* FlappyDoveUITests */ = {
+			isa = PBXGroup;
+			children = (
+				17C23E822822BDEB00D69094 /* FlappyDoveUITests.swift */,
+				17C23E842822BDEB00D69094 /* FlappyDoveUITestsLaunchTests.swift */,
+			);
+			path = FlappyDoveUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		17C23E5A2822BDEA00D69094 /* FlappyDove */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17C23E882822BDEB00D69094 /* Build configuration list for PBXNativeTarget "FlappyDove" */;
+			buildPhases = (
+				17C23E572822BDEA00D69094 /* Sources */,
+				17C23E582822BDEA00D69094 /* Frameworks */,
+				17C23E592822BDEA00D69094 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlappyDove;
+			productName = FlappyDove;
+			productReference = 17C23E5B2822BDEA00D69094 /* FlappyDove.app */;
+			productType = "com.apple.product-type.application";
+		};
+		17C23E732822BDEB00D69094 /* FlappyDoveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17C23E8B2822BDEB00D69094 /* Build configuration list for PBXNativeTarget "FlappyDoveTests" */;
+			buildPhases = (
+				17C23E702822BDEB00D69094 /* Sources */,
+				17C23E712822BDEB00D69094 /* Frameworks */,
+				17C23E722822BDEB00D69094 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				17C23E762822BDEB00D69094 /* PBXTargetDependency */,
+			);
+			name = FlappyDoveTests;
+			productName = FlappyDoveTests;
+			productReference = 17C23E742822BDEB00D69094 /* FlappyDoveTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		17C23E7D2822BDEB00D69094 /* FlappyDoveUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17C23E8E2822BDEB00D69094 /* Build configuration list for PBXNativeTarget "FlappyDoveUITests" */;
+			buildPhases = (
+				17C23E7A2822BDEB00D69094 /* Sources */,
+				17C23E7B2822BDEB00D69094 /* Frameworks */,
+				17C23E7C2822BDEB00D69094 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				17C23E802822BDEB00D69094 /* PBXTargetDependency */,
+			);
+			name = FlappyDoveUITests;
+			productName = FlappyDoveUITests;
+			productReference = 17C23E7E2822BDEB00D69094 /* FlappyDoveUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		17C23E532822BDEA00D69094 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					17C23E5A2822BDEA00D69094 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					17C23E732822BDEB00D69094 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 17C23E5A2822BDEA00D69094;
+					};
+					17C23E7D2822BDEB00D69094 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 17C23E5A2822BDEA00D69094;
+					};
+				};
+			};
+			buildConfigurationList = 17C23E562822BDEA00D69094 /* Build configuration list for PBXProject "FlappyDove" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 17C23E522822BDEA00D69094;
+			productRefGroup = 17C23E5C2822BDEA00D69094 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				17C23E5A2822BDEA00D69094 /* FlappyDove */,
+				17C23E732822BDEB00D69094 /* FlappyDoveTests */,
+				17C23E7D2822BDEB00D69094 /* FlappyDoveUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		17C23E592822BDEA00D69094 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17CCC0A7284231F700BD91B0 /* bread (1).png in Resources */,
+				17C23E6A2822BDEA00D69094 /* Main.storyboard in Resources */,
+				17C23E612822BDEA00D69094 /* GameScene.sks in Resources */,
+				17C23E6C2822BDEB00D69094 /* Assets.xcassets in Resources */,
+				17CCC0AA2842469B00BD91B0 /* upheavtt.ttf in Resources */,
+				17E715D32842103A00987163 /* trash dove (pixel) (2).png in Resources */,
+				1732F8F12843D8860071F381 /* base.png in Resources */,
+				17C23E6F2822BDEB00D69094 /* LaunchScreen.storyboard in Resources */,
+				17E715D42842103A00987163 /* trash dove (pixel).png in Resources */,
+				17EBE361283A558C004F2C4D /* flappy dove bg.jpeg in Resources */,
+				17C23E632822BDEA00D69094 /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17C23E722822BDEB00D69094 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17C23E7C2822BDEB00D69094 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		17C23E572822BDEA00D69094 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17C23E652822BDEA00D69094 /* GameScene.swift in Sources */,
+				17C23E672822BDEA00D69094 /* GameViewController.swift in Sources */,
+				17C23E5F2822BDEA00D69094 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17C23E702822BDEB00D69094 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17C23E792822BDEB00D69094 /* FlappyDoveTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17C23E7A2822BDEB00D69094 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17C23E852822BDEB00D69094 /* FlappyDoveUITestsLaunchTests.swift in Sources */,
+				17C23E832822BDEB00D69094 /* FlappyDoveUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		17C23E762822BDEB00D69094 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 17C23E5A2822BDEA00D69094 /* FlappyDove */;
+			targetProxy = 17C23E752822BDEB00D69094 /* PBXContainerItemProxy */;
+		};
+		17C23E802822BDEB00D69094 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 17C23E5A2822BDEA00D69094 /* FlappyDove */;
+			targetProxy = 17C23E7F2822BDEB00D69094 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		17C23E682822BDEA00D69094 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17C23E692822BDEA00D69094 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		17C23E6D2822BDEB00D69094 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17C23E6E2822BDEB00D69094 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		17C23E862822BDEB00D69094 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		17C23E872822BDEB00D69094 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		17C23E892822BDEB00D69094 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2Q2YLDN4RL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FlappyDove/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
+				NEW_SETTING1 = "";
+				PRODUCT_BUNDLE_IDENTIFIER = Minh.FlappyDove;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		17C23E8A2822BDEB00D69094 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2Q2YLDN4RL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FlappyDove/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
+				NEW_SETTING1 = "";
+				PRODUCT_BUNDLE_IDENTIFIER = Minh.FlappyDove;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		17C23E8C2822BDEB00D69094 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2Q2YLDN4RL;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Minh.FlappyDoveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlappyDove.app/FlappyDove";
+			};
+			name = Debug;
+		};
+		17C23E8D2822BDEB00D69094 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2Q2YLDN4RL;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Minh.FlappyDoveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlappyDove.app/FlappyDove";
+			};
+			name = Release;
+		};
+		17C23E8F2822BDEB00D69094 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2Q2YLDN4RL;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Minh.FlappyDoveUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FlappyDove;
+			};
+			name = Debug;
+		};
+		17C23E902822BDEB00D69094 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2Q2YLDN4RL;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Minh.FlappyDoveUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FlappyDove;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		17C23E562822BDEA00D69094 /* Build configuration list for PBXProject "FlappyDove" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17C23E862822BDEB00D69094 /* Debug */,
+				17C23E872822BDEB00D69094 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		17C23E882822BDEB00D69094 /* Build configuration list for PBXNativeTarget "FlappyDove" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17C23E892822BDEB00D69094 /* Debug */,
+				17C23E8A2822BDEB00D69094 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		17C23E8B2822BDEB00D69094 /* Build configuration list for PBXNativeTarget "FlappyDoveTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17C23E8C2822BDEB00D69094 /* Debug */,
+				17C23E8D2822BDEB00D69094 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		17C23E8E2822BDEB00D69094 /* Build configuration list for PBXNativeTarget "FlappyDoveUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17C23E8F2822BDEB00D69094 /* Debug */,
+				17C23E902822BDEB00D69094 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 17C23E532822BDEA00D69094 /* Project object */;
+}
