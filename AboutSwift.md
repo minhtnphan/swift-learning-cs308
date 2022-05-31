@@ -10,6 +10,8 @@ Get to know Swift - a programming language developed by Apple for Apple devices 
 - [Objects and Classes](#objects-and-classes)
 - [References](#references)
 
+All the sample code in this sheet can be retrieved at [helloworld folder](https://github.com/minhtnphan/swift-learning-cs308/tree/main/helloworld) in this repo.
+
 <h1>Origin of Swift</h1>
 Swift was first introduced in Worldwide Developers Conference in 2014 of Apple. Prior to Swift, Apple mainly used Objective-C to develop their products. However, the Apple developers (including Bertrand Serlet) realized that Apple's applications needed to be developed by a safer language than C-based languages in terms of memory management and syntax. Swift was created as an alternative to Objective-C with simpler syntax and conventions for the purpose of easy, faster code that avoids common reasons for crashes during runtime.
 <br>
@@ -211,8 +213,52 @@ if condition {
     Since Swift requires to delimit code block clearly, dangling else can be easily avoided if we explicitly delimit code blocks. The use of the structure <code>if - else if - else</code> is recommended to delimit code blocks clearly.
 
 <h3>Guard statement</h3>
-    Guard is the opposite of <code>if</code> statement. This means that <code>guard</code> only executes else statements. However, we will go back to <code>guard</code> after learning about Swift's functions and repetition structures.
+    Guard is the opposite of <code>if</code> statement. This means that <code>guard</code> only executes else statements. However, <code>guard</code> can only be compiled in while loop and functions only (if you have not reached function and selection control statements, go through them first!) The general syntax of guard will be:<br>
     
+ ```swift
+ guard expression else {
+  // statements
+  // control statement: return, break, continue or throw to exit guard scope
+}
+```
+    
+Here, the expression must be evaluated into true or false.
+    <ul>
+        <li><code>expression = true</code>: the statements inside the block will not be executed</li>
+        <li><code>expression = false</code>: the statements inside the block will not executed</li>
+    </ul>
+An example would be:<br>
+    
+```swift
+//using while loop
+var i = 2
+while (i <= 10) {
+  // guard condition to check the even number 
+  guard i % 2 == 0 else {
+     i = i + 1
+    continue
+  }
+  print(i)
+  i = i + 1
+} 
+//using function
+func checkOddEven() {
+  var number = 23
+
+  // use of guard statement
+  guard number % 2 == 0 else {
+    
+    print("Odd Number")
+    return
+  }
+
+  print("Even Number")
+}
+
+// function call
+checkOddEven()
+```
+              
 <h3>Switch statement</h3>
 As mentioned in Swift's documentation, <code>switch</code> statement considers a value and compares it against several possible matching patterns. Swift accepts all values of the same type for switch - case. All switch statements will be considered, and there must be one case that matches with the switch statement. This is called the exhaustive characteristics of Swift switch-case. Consquently, Swift does not accept an empty case. Lastly, switch statement can contain multiple cases (called compound cases) <br>
 The structure of Swift is: 
@@ -448,10 +494,24 @@ setInfo(myName: "Minh", age: 21); //correct way of using argument label
 setInfo(name: "Minh", age: 21); //incorrect label, name is a parameter name so it does not exist outside the function's scope
 ```
 <h3>Recursion</h3>
-Swift does allow recursive function with typical structure: a base-case to stop, and the function call. For example:<br>
+Swift does allow recursive function with typical structure: a base-case to stop the recursive calls, and the function call. For example:<br>
+
+```swift
+//recursive function to calculate factorial of a number
+func factorial(number:Int) -> Int {
+    //base case
+    if (number == 0) {
+        return 1;
+    }
+    return number * factorial(number:number - 1);
+}
+
+var factorial_result = factorial(number:5);
+print(factorial_result);
+```
 
 <h2>Swift's reference and value types</h2>
-Swift is passed-by-reference for reference types and is passed-by-value for value types.<br>
+Swift is passed-by-reference for reference types, e.g. classes and functions; and is passed-by-value for others, e.g. structs, enums, string, arrays...<br>
 An example that shows Swift is passed-by-reference is:
 
 ```swift
@@ -492,8 +552,8 @@ The definition of class in Swift is:<br>
 ```swift
 class Person {
     //properties of Person goes here
-    var name
-    var age
+    var name: String
+    var age: Int
 }
 let minh = Person() //instantiate a Person object
 print(minh.age) //access Person's properties/attributes
@@ -505,20 +565,20 @@ Structs -- short for Structures, is also another way to store different data typ
 
 ```swift
 struct Student {
-    var class
-    var major
-    var gpa
+    var classOf: Int
+    var major: String
+    var gpa: Double
  }
 let minh = Student() //instantiate a struct is similar to a class
 print(minh.class) //getting the properties/attributes is also similar
 ```
 Interestingly, struct is passed by value while class is passed by reference. Take an example from our Student struct:<br>
 ```swift
-let minh = Student(class: 2023, major: "CS", gpa: 4.0)
+let minh = Student(classOf: 2023, major: "CS", gpa: 4.0)
 var giang = minh
 giang.major = "arts"
 print("minh's major is \(minh.major)")  //print CS
-print("giang's major is \(minh.major)") //prints arts 
+print("giang's major is \(giang.major)") //prints arts 
 ```
 When <code>giang</code> was given the values belonged to <code>minh</code>, Swift creates a copy of <code>minh</code>'s values and put into <code>giang</code>'s instance. Therefore, <code>giang</code> and <code>minh</code> are 2 separate instances, thus changing values of one instance does not affect the other one.
 <h3>Properties</h3>
@@ -579,16 +639,16 @@ For instializers with parameters, we have an example from Student:<br>
 
 ```swift
 struct Student {
-    var class: Int
+    var classOf: Int
     var major: String
     var gpa: Double
-    init(class: Int, major: String, gpa:Double) {
-        self.class = class
+    init(classOf:Int, major:String, gpa:Double) {
+        self.classOf = classOf
         self.major = major
         self.gpa = gpa
     }
  }
- let khoi = Student(2023, "CS", 3.999) //using instializer
+ let khoi = Student(classOf:2023, major:"CS", gpa:3.999) //using instializer
  ```
 <h3>Instance methods</h3>
 Instance methods are methods that belong to instances of a class or structure. Instance methods provide ways to access and modify the instance's properties. They have the exact same syntax as Functions, which have been explained above. For example with Person class:<br>
@@ -598,7 +658,7 @@ class Person {
     var name:String
     var age: Int
     func ageAge() {
-        age +=1
+        age = age + 1
     }
     func changeName() {
         name = "New Person"
@@ -611,17 +671,22 @@ class Person {
  For struct, it is a different case from class. Sicne struct is passed by value, its properties cannot be modified within instance methods. Therefore, to modify the properties of your structure or enumeration within a particular method, you can opt in to <code>mutating</code> behavior for that method.
 ```swift
 struct Student {
-    var class
-    var major
-    var gpa
+    var classOf: Int
+    var major: String
+    var gpa: Double
+    init(classOf:Int, major:String, gpa:Double) {
+        self.classOf = classOf
+        self.major = major
+        self.gpa = gpa
+    }
     mutating changeClass(classYear:Int) {
-        class = 2023
+        classOf = 2023
     }
  }
  
- var nghi = Student(2020, "CS", 3.6)
- nghi.changeClass(2023)
- print("Now nghi's class is \(nghi.class)")
+var nghi = Student(classOf:2020, major: "CS", gpa:3.6)
+nghi.changeClass(classYear:2023)
+print("Now nghi's class is \(nghi.classOf)")
  ```
  Lastly, Swift also uses the keyword <code>self</code> to refer to the current instance within its own instance methods. Self does not need to be used many often, but is actually helpful for helping the compiler to distinguish the instance's properties and a variable of same name. 
 <h3>Type methods</h3>
@@ -684,9 +749,9 @@ class Teacher: Person {
             return super.introduction + " that teaches " + subject
     }
 }
-let Hoang = Teacher();
+let Hoang = Teacher(name:"Hoang", age: 30);
 Hoang.worksAt(); //prints "teaching at Fulbright"
-print(Hoang.introduction) // prints "a human being that teaches math
+print(Hoang.introduction)
 ```
 <h3>Preventing overrides</h3>
 Swift allows to prevent a method, property, or subscript from being overridden by marking it as final. All you need to do is to put <code>final</code> modifier before the method, property, or subscript’s introducer keyword (such as final var, final func, final class func, and final subscript).
